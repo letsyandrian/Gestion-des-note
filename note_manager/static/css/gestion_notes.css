@@ -1,0 +1,168 @@
+/* Style global */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #f9fafb; /* Couleur de fond claire et agréable */
+    color: #1f2937; /* Couleur du texte pour un bon contraste */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Titre principal */
+h1 {
+    color: #3b82f6; /* Bleu vif pour le titre */
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire pour ajouter une note */
+form {
+    background-color: #ffffff; /* Fond blanc pour le formulaire */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #1e40af; /* Couleur bleue pour les labels */
+}
+
+/* Alignement des champs Titre et Note sur la même ligne */
+form .inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    max-width: 220px; /* Limite la largeur des champs */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+/* Le bouton Ajouter */
+form button {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: #2563eb; /* Bleu plus foncé au survol */
+}
+
+/* Messages Flash */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+ul li {
+    background-color: #e5e7eb; /* Fond gris clair pour les messages */
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #111827;
+}
+
+/* Liste des notes */
+h2 {
+    font-size: 28px;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+ul.notes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+ul.notes li {
+    background-color: #f1f5f9; /* Fond gris clair */
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1f2937;
+    font-size: 18px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+ul.notes li:hover {
+    background-color: #e0f2fe; /* Couleur bleu clair au survol */
+    transform: translateY(-3px); /* Légère animation au survol */
+}
+
+ul.notes li a {
+    text-decoration: none;
+    color: #3b82f6;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+ul.notes li a:hover {
+    color: #2563eb;
+}
+
+/* Adaptabilité pour petits écrans */
+@media (max-width: 600px) {
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    form .inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form input[type="text"] {
+        width: 100%;
+    }
+
+    ul.notes li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    ul.notes li a {
+        margin-left: 0;
+    }
+}

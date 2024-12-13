@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gestion_notes.css') }}">
+</head>
+<body>
+    <h1>Gestion des Notes</h1>
+
+    <!-- Formulaire pour ajouter une nouvelle note -->
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="titre">Titre :</label>
+        {{ form.titre }}
+        <label for="note">Note :</label>
+        {{ form.note }}
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <!-- Affichage des messages Flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Liste des notes existantes -->
+    <h2>Liste des Notes</h2>
+    <ul>
+        {% for note in notes %}
+        <li>
+            {{ note.titre }} - {{ note.note }}
+            <a href="{{ url_for('modifier_note', id=note.id) }}">Modifier</a> <!-- Lien vers la modification -->
+            <a href="{{ url_for('supprimer_note', id=note.id) }}">Supprimer</a> <!-- Lien pour supprimer -->
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Impression PDF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imprimer_pdf.css') }}">
+</head>
+<body>
+    <h1>Liste des Notes</h1>
+    <ul>
+        {% for note in notes %}
+        <li>{{ note.titre }} - {{ note.note }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

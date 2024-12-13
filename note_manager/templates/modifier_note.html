@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier la Note</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/modifier_note.css') }}">
+</head>
+<body>
+    <h1>Modifier la Note</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <!-- Champ pour le titre -->
+        <label for="titre">Titre:</label>
+        {{ form.titre(size=40) }}
+
+        <!-- Champ pour la note -->
+        <label for="note">Note:</label>
+        {{ form.note(size=10) }}
+
+        <!-- Bouton de soumission -->
+        <button type="submit">Mettre à jour</button>
+    </form>
+</body>
+</html>

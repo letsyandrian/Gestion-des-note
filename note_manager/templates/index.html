@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <h1>Bienvenue sur l'application de gestion des notes</h1>
+    <a href="{{ url_for('gestion_notes') }}">Gérer les notes</a><br>
+    <a href="{{ url_for('afficher_notes') }}">Afficher les notes</a><br>
+    <a href="{{ url_for('exporter_excel') }}">Exporter vers Excel</a><br>
+    <a href="{{ url_for('imprimer_pdf') }}">Imprimer en PDF</a>
+</body>
+</html>

@@ -1,0 +1,71 @@
+/* Style global */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #f9f9f9; /* Fond neutre et léger */
+    color: #333; /* Couleur du texte */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Titre principal */
+h1 {
+    color: #d9534f; /* Rouge doux pour attirer l'attention */
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Liste des notes */
+ul {
+    list-style-type: none; /* Retire les puces */
+    padding: 0;
+    width: 80%; /* Largeur limitée pour une meilleure lisibilité */
+    max-width: 600px;
+    background-color: #fff; /* Fond blanc pour contraster */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    overflow: hidden; /* Empêche le débordement */
+}
+
+/* Élément de la liste */
+li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee; /* Ligne de séparation entre les éléments */
+    font-size: 18px;
+    color: #555;
+}
+
+/* Dernier élément sans bordure */
+li:last-child {
+    border-bottom: none;
+}
+
+/* Effet au survol */
+li:hover {
+    background-color: #f5f5f5; /* Fond gris clair au survol */
+    color: #000; /* Texte légèrement plus foncé */
+    cursor: default;
+}
+
+/* Adaptabilité pour petits écrans */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px; /* Taille réduite du titre */
+    }
+
+    ul {
+        width: 95%; /* Largeur presque complète */
+    }
+
+    li {
+        font-size: 16px; /* Taille réduite des éléments */
+    }
+}

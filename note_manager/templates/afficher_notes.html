@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Afficher les Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/afficher_notes.css') }}">
+</head>
+<body>
+    <h1>Afficher les Notes</h1>
+    {% if notes.items %}
+        <ul>
+            {% for note in notes.items %}
+            <li>{{ note.titre }} - {{ note.note }}</li>
+            {% endfor %}
+        </ul>
+        <div>
+            {% if notes.has_prev %}
+            <a href="{{ url_for('afficher_notes', page=notes.prev_num) }}">Précédent</a>
+            {% endif %}
+            {% if notes.has_next %}
+            <a href="{{ url_for('afficher_notes', page=notes.next_num) }}">Suivant</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>Aucune note disponible.</p>
+    {% endif %}
+</body>
+</html>
